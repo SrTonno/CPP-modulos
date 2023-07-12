@@ -3,7 +3,7 @@ include colors.mk
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
-SRCSCFILES = Zombie.cpp #main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCSCFILES = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 #UTILDIR = ${addprefix ${SRCSDIR}, utils/}
 #UTILFILES = ft_atoi.c utils.c ft_isdigit.c
