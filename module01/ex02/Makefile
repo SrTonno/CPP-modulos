@@ -3,7 +3,7 @@ include colors.mk
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
-SRCSCFILES = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCSCFILES = main.cpp
 
 #UTILDIR = ${addprefix ${SRCSDIR}, utils/}
 #UTILFILES = ft_atoi.c utils.c ft_isdigit.c
@@ -19,7 +19,7 @@ INC = -I ./
 ###############################################################################
 #                                              SETTINGS                       #
 ###############################################################################
-NAME = ex01
+NAME = ex02
 
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
