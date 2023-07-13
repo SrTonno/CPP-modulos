@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:06:55 by tvillare          #+#    #+#             */
-/*   Updated: 2023/07/13 15:48:24 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/07/13 18:16:54 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ZOMBIE_HPP
 #include <iostream>
 #include <string>
+
 
 class Zombie {
 	private:

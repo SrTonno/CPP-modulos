@@ -12,8 +12,7 @@ SRCSCFILES = main.cpp
 SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}} \
 		#${addprefix ${UTILDIR}, ${UTILFILES}}
 
-OBJS = $(SRCS:%.cpp=objs/%.o)
-DEPS = $(OBJS:%.o=%.d)
+OBJS = ${SRCS:.c=.o}
 
 INC = -I ./
 
@@ -24,8 +23,9 @@ NAME = ex02
 
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS += -pthread
 FSANITIZE = -fsanitize=address -g
-CPPFLAGS = -MMD
+
 RM = rm -rf
 ################################################################################
 .PHONY: all re fclean clean
@@ -35,26 +35,21 @@ RM = rm -rf
 
 all: ${NAME}
 
-${NAME}: objs ${OBJS}
-	${CC}  ${CFLAGS} ${OBJS} -o ${NAME}
+${NAME}: ${OBJS}
+	@${CC}  ${CFLAGS} ${OBJS} -o ${NAME}
 	@printf "\n${God}${BIGreen}[Create] ${BIBlue}Philo${NoColor}${NoColor}${God}\n"
 
 ${LFT_NAME}:
 	@make -s -C ${LIB_DIR}
-objs:
-	@mkdir -p	objs/srcs
 
-objs/%.o: %.cpp
+%.o: %.c
 	@${CC} -c ${CFLAGS} $^ -o $@ ${INC}
 	@printf "${BIGreen}[Compiled]${BIBlue} $^ ${NoColor}to ${BIPurple}$@ ${NoColor}                       \r"
-
--include $(DEPS)
-
 
 re: fclean all
 
 clean:
-	@${RM} objs
+	@${RM} ${OBJS}
 	@printf "${Bad}${BIRed}Delete *.o${NoColor}${Bad}\n"
 
 fclean: clean
