@@ -1,4 +1,3 @@
-include colors.mk
 ###############################################################################
 #                                              FILES                          #
 ###############################################################################
@@ -45,7 +44,9 @@ objs:
 	@mkdir -p	objs/srcs
 
 objs/%.o: %.cpp
-	@${CC} -c ${CFLAGS} ${CPPFLAGS} $^ -o $@ ${INC}
+	#@${CC} -c ${CFLAGS} ${CPPFLAGS} $^ -o $@ ${INC}
+	@${CC} -MM -MT $@ $< > $*.d
+	#@${CC} -c ${CFLAGS} $^ -o $@ ${INC}
 	@printf "${BIGreen}[Compiled]${BIBlue} $^ ${NoColor}to ${BIPurple}$@ ${NoColor}                       \r"
 
 -include $(DEPS)

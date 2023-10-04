@@ -1,9 +1,8 @@
-include colors.mk
 ###############################################################################
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
-SRCSCFILES = main.cpp
+SRCSCFILES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 #UTILDIR = ${addprefix ${SRCSDIR}, utils/}
 #UTILFILES = ft_atoi.c utils.c ft_isdigit.c
@@ -12,7 +11,8 @@ SRCSCFILES = main.cpp
 SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}} \
 		#${addprefix ${UTILDIR}, ${UTILFILES}}
 
-OBJS = ${SRCS:.c=.o}
+OBJS = $(SRCS:%.cpp=objs/%.o)
+DEPS = $(OBJS:%.o=%.d)
 
 INC = -I ./
 
@@ -23,9 +23,8 @@ NAME = ex02
 
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-CFLAGS += -pthread
 FSANITIZE = -fsanitize=address -g
-
+CPPFLAGS = -MMD
 RM = rm -rf
 ################################################################################
 .PHONY: all re fclean clean
@@ -35,21 +34,28 @@ RM = rm -rf
 
 all: ${NAME}
 
-${NAME}: ${OBJS}
-	@${CC}  ${CFLAGS} ${OBJS} -o ${NAME}
+${NAME}: objs ${OBJS}
+	${CC}  ${CFLAGS} ${OBJS} -o ${NAME}
 	@printf "\n${God}${BIGreen}[Create] ${BIBlue}Philo${NoColor}${NoColor}${God}\n"
 
 ${LFT_NAME}:
 	@make -s -C ${LIB_DIR}
+objs:
+	@mkdir -p	objs/srcs
 
-%.o: %.c
+objs/%.o: %.cpp
+	#@${CC} -c ${CFLAGS} ${CPPFLAGS} $^ -o $@ ${INC}
+	@${CC} -MM -MT $@ $< > $*.d
 	@${CC} -c ${CFLAGS} $^ -o $@ ${INC}
 	@printf "${BIGreen}[Compiled]${BIBlue} $^ ${NoColor}to ${BIPurple}$@ ${NoColor}                       \r"
+
+-include $(DEPS)
+
 
 re: fclean all
 
 clean:
-	@${RM} ${OBJS}
+	@${RM} objs
 	@printf "${Bad}${BIRed}Delete *.o${NoColor}${Bad}\n"
 
 fclean: clean

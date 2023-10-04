@@ -5,22 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 19:54:06 by tvillare          #+#    #+#             */
-/*   Updated: 2023/07/13 18:15:05 by tvillare         ###   ########.fr       */
+/*   Created: 2023/10/04 11:49:48 by tvillare          #+#    #+#             */
+/*   Updated: 2023/10/04 13:02:15 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "Zombie.hpp"
+
 Zombie*	zombieHorde( int N, std::string name )
 {
-	Zombie	*z[N];
+	Zombie	*z = new Zombie[N];
 	int		i;
 
 	i = 1;
 	while (N > i) {
-		z[i] = new Zombie(name);
-		z[i]->announce();
-		i++;
+		z[i].set_name(name);
+		z[i++].announce();
 	}
-	return (z[0]);
+	return (z);
 }

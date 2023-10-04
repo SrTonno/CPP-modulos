@@ -5,15 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/09 18:14:19 by tvillare          #+#    #+#             */
-/*   Updated: 2023/07/13 16:04:32 by tvillare         ###   ########.fr       */
+/*   Created: 2023/10/04 11:19:14 by tvillare          #+#    #+#             */
+/*   Updated: 2023/10/04 13:01:40 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 int main(void) {
-	Zombie z("HOAL");
-	zombieHorde(7, "PAC");
+	//Zombie z("HOAL");
+	Zombie *horde;
+	horde = zombieHorde(7, "PAC");
+	delete[] (horde);
+	//system("leaks -q ex01");
 	return 0;
 }

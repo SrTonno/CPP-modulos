@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 19:03:04 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/03 18:35:37 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/10/03 18:44:22 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void PhoneBook::add_contact()
 	input_str("darkest secret", &name[last % 8].darkest_secret);
 	while (1) {
 		input_str("phone number", &name[last % 8].phone_number);
-		if (is_num(name[last % 8].phone_number) == 1)
+		if (is_num(name[last % 8].phone_number) == 1 && name[last % 8].phone_number.size() == 9)
 			break ;
 	}
 	last++;
