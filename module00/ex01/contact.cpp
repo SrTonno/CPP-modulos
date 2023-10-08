@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <cstdlib>
 
-void	input_str(std::string action, std::string *save)
+std::string	input_str(std::string action)
 {
 	std::string	name;
 
@@ -22,8 +23,9 @@ void	input_str(std::string action, std::string *save)
 		if (!name.empty())
 			break ;
 	}
-	*save = name;
+	return name;
 }
+
 int	is_num(std::string str)
 {
 	int	i;
@@ -34,61 +36,64 @@ int	is_num(std::string str)
 			return(0);
 	}
 	return (1);
-
-
 }
 
 int	input_int()
 {
 	std::string	input;
-	int			num;
-
 	while (1){
 		std::cout << "que indice quieres ? ";
 		std::getline(std::cin, input);
 		if (!input.empty())
 			break ;
 	}
-	num = std::stoi(input);
-	return (num);
+
+	return (atoi(input.c_str()));
 }
 
-void	print_contact(t_contact *conta)
+void	Contact::print_full_contact()
 {
-	std::cout << conta->first_name << " | ";
-	std::cout << conta->last_name << "| ";
-	std::cout << conta->name << " | ";
-	std::cout << conta->nickname << " | ";
-	std::cout << conta->darkest_secret << " | ";
-	std::cout << conta->phone_number << std::endl;
+	std::cout << first_name << " | ";
+	std::cout << last_name << "| ";
+	std::cout << name << " | ";
+	std::cout << nickname << " | ";
+	std::cout << darkest_secret << " | ";
+	std::cout << phone_number << std::endl;
 }
 
-void PhoneBook::add_contact()
+void Contact::add_contact()
 {
-	input_str("fisrt name", &name[last % 8].first_name);
-	input_str("last name", &name[last % 8].last_name);
-	input_str("name", &name[last % 8].name);
-	input_str("nickname", &name[last % 8].nickname);
-	input_str("darkest secret", &name[last % 8].darkest_secret);
+	first_name = input_str("fisrt name");
+	last_name = input_str("last name");
+	name = input_str("name");
+	nickname = input_str("nickname");
+	darkest_secret = input_str("darkest secret");
 	while (1) {
-		input_str("phone number", &name[last % 8].phone_number);
-		if (is_num(name[last % 8].phone_number) == 1 && name[last % 8].phone_number.size() == 9)
+		phone_number = input_str("phone number");
+		if (is_num(phone_number) == 1 && phone_number.size() == 9)
 			break ;
 	}
+}
+
+void Contact::print_contact() {
+	std::cout << '|' << name << '|' << last_name << '|' << nickname << std::endl;
+}
+
+void PhoneBook::add_phone() {
+	name[last % 8].add_contact();
 	last++;
 }
 
-void PhoneBook::search_contact()
-{
-	int	i;
+void PhoneBook::search_phone() {
+		int	i;
 	int	num;
 
 	i = 0;
 	while (i < last && i < 8){
-		std::cout << (i + 1) << '|' << name[i].name << '|' << name[i].last_name << '|' << name[i].nickname << std::endl;
-		i++;
+		std::cout << (i + 1);
+		name[i++].print_contact();
 	}
 	num = input_int();
 	if (0 < num && num < 8 && last != 0)
-		print_contact(&name[num - 1]);
+		name[num - 1].print_contact();
 }

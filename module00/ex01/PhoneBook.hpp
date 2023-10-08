@@ -15,7 +15,7 @@
 //#pragma once
 #include <string>
 #include <iostream>
-
+/*
 typedef struct s_contact
 {
 	std::string first_name;
@@ -24,17 +24,30 @@ typedef struct s_contact
 	std::string nickname;
 	std::string	darkest_secret;
 	std::string	phone_number;
-}	t_contact;
+}	t_contact;*/
 
+class Contact {
+	private:
+		std::string first_name;
+		std::string last_name;
+		std::string name;
+		std::string nickname;
+		std::string	darkest_secret;
+		std::string	phone_number;
+	public:
+		void		print_full_contact();
+		void		print_contact();
+		void		add_contact();
+};
 
 class PhoneBook {
 	private:
-		t_contact name[8];
+		Contact name[8];
 		int			last;
 	public:
 		PhoneBook() : last(0) {}
-		void		search_contact();
-		void		add_contact();
+		void		search_phone();
+		void		add_phone();
 };
 void add_contact();
 void search_contact();

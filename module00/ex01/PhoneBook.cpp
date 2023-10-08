@@ -23,9 +23,9 @@ int	main(void)
 		//std::cin >> input;
 		std::getline(std::cin, input);
 		if (input == "ADD")
-			contact.add_contact();
+			contact.add_phone();
 		else if (input == "SEARCH")
-			contact.search_contact();
+			contact.search_phone();
 		else if (input == "EXIT")
 			break ;
 	}
