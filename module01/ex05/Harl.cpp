@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:40:41 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/05 18:30:16 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/10/14 16:33:58 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,28 @@ void	Harl::error( void ) {
 }
 
 void	Harl::complain( std::string level ) {
-	this->(*level);
+	std::string inputs[4] =
+	{
+		"debug"		,
+		"info"		,
+		"warning"	,
+		"error"
+	};
+
+	void	(Harl:: *levels[4])(void) =
+	{
+		&Harl::debug	,
+		&Harl::info		,
+		&Harl::warning	,
+		&Harl::error
+	};
+
+	for (int i = 0; i < 4; i++)
+	{
+		if (level == inputs[i])
+		{
+			(this->*levels[i])();
+			return ;
+		}
+	}
 }

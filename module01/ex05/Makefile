@@ -2,7 +2,7 @@
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
-SRCSCFILES = main.cpp
+SRCSCFILES = main.cpp Harl.cpp
 
 
 SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}}

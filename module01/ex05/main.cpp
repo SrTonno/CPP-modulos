@@ -6,7 +6,15 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:40:52 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/05 17:40:53 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/10/14 16:44:26 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Harl.hpp"
+
+int	main(void)
+{
+	Harl harl;
+
+	harl.complain("info");
+}

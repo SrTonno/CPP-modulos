@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:40:41 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/05 18:41:49 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/10/14 16:42:55 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,35 @@ void	Harl::error( void ) {
 	std::cout << "“This is unacceptable! I want to speak to the manager now.”" << std::endl;
 }
 
+enum ComplainLevel {
+	DEBUG,
+	INFO,
+	WARNING,
+	ERROR,
+	UNKNOWN
+};
+
+ComplainLevel stringToEnum(const std::string &level)
+{
+	if (level == "debug") return DEBUG;
+	if (level == "info") return INFO;
+	if (level == "warning") return WARNING;
+	if (level == "error") return ERROR;
+	return UNKNOWN;
+}
+
 void	Harl::complain( std::string level ) {
-	switch(level) //donde opción es la variable a comparar
+	switch(stringToEnum(level))
 	{
-		case "debug":
+		case DEBUG:
 			this->debug();
-		case "info":
+		case INFO:
 			this->info();
-		case "warning":
+		case WARNING:
 			this->warning();
-		case "error":
+		case ERROR:
 			this->error();
+		case UNKNOWN:
+			break;
 	}
 }
