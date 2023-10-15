@@ -6,13 +6,12 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:53:31 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/15 18:12:03 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/10/15 19:54:13 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-
 
 class Fixed
 {
