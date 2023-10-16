@@ -2,7 +2,7 @@
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
-SRCSCFILES = main.cpp Fixed.cpp
+SRCSCFILES = main.cpp ClapTrap.cpp
 
 
 SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}}
@@ -15,7 +15,7 @@ INC = -I ./
 ###############################################################################
 #                                              SETTINGS                       #
 ###############################################################################
-NAME = ex02
+NAME = ex00
 
 CPP = g++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -39,17 +39,14 @@ sanitize: $(NAME) #no funciona
 
 all: ${NAME}
 
-objs:
-	@mkdir -p	objs/srcs
-	
 ${NAME}: objs ${OBJS}
 	${CPP}  ${CPPFLAGS} ${OBJS} -o ${NAME}
 	@printf "\n${God}${BIGreen}[Create] ${BIBlue}${NAME}${NoColor}${NoColor}${God}\n"
 
 ${LFT_NAME}:
 	@make -s -C ${LIB_DIR}
-
-
+objs:
+	@mkdir -p	objs/srcs
 
 objs/%.o: %.cpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@ ${INC}
