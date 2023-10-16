@@ -1,11 +1,9 @@
+#UNAME_S := $(shell uname -s)
 ###############################################################################
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
-SRCSCFILES = contact.cpp PhoneBook.cpp
-
-#UTILDIR = ${addprefix ${SRCSDIR}, utils/}
-#UTILFILES = ft_atoi.c utils.c ft_isdigit.c
+SRCSCFILES = main.cpp Fixed.cpp Point.cpp
 
 
 SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}}
@@ -15,10 +13,11 @@ DEPS = $(OBJS:%.o=%.d)
 
 INC = -I ./
 
+
 ###############################################################################
 #                                              SETTINGS                       #
 ###############################################################################
-NAME = ex01
+NAME = ex03
 
 CPP = g++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -69,4 +68,3 @@ fclean: clean
 	@printf "${Bad}${BIRed}Delete ${NAME}${NoColor}${Bad}\n"
 
 ################################################################################
-

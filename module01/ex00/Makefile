@@ -19,37 +19,50 @@ INC = -I ./
 ###############################################################################
 #                                              SETTINGS                       #
 ###############################################################################
-NAME = ex01
+NAME = ex00
 
-CC = g++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-CFLAGS += -pthread
+CPP = g++
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 FSANITIZE = -fsanitize=address -g
-
+CPPFLAGS += -MMD
 RM = rm -rf
+
+ifeq ($(UNAME_S),Linux)
+	sanitize: CPPFLAGS += -pedantic -g3 -fsanitize=address -fsanitize=leak -fsanitize=undefined -fsanitize=bounds -fsanitize=null
+endif
+ifeq ($(UNAME_S),Darwin)
+	sanitize: CPPFLAGS += -pedantic -g3 -fsanitize=address
+endif
+sanitize: $(NAME) #no funciona
+
 ################################################################################
-.PHONY: all re fclean clean
+.PHONY: all re fclean clean sanitize
 ###############################################################################
 #                                              OPTIONS                        #
 ###############################################################################
 
 all: ${NAME}
 
-${NAME}: ${OBJS}
-	@${CC}  ${CFLAGS} ${OBJS} -o ${NAME}
-	@printf "\n${God}${BIGreen}[Create] ${BIBlue}Philo${NoColor}${NoColor}${God}\n"
+${NAME}: objs ${OBJS}
+	${CPP}  ${CPPFLAGS} ${OBJS} -o ${NAME}
+	@printf "\n${God}${BIGreen}[Create] ${BIBlue}${NAME}${NoColor}${NoColor}${God}\n"
 
 ${LFT_NAME}:
 	@make -s -C ${LIB_DIR}
+objs:
+	@mkdir -p	objs/srcs
 
-%.o: %.c
-	@${CC} -c ${CFLAGS} $^ -o $@ ${INC}
+objs/%.o: %.cpp
+	$(CPP) $(CPPFLAGS) -c $< -o $@ ${INC}
 	@printf "${BIGreen}[Compiled]${BIBlue} $^ ${NoColor}to ${BIPurple}$@ ${NoColor}                       \r"
+
+-include $(DEPS)
+
 
 re: fclean all
 
 clean:
-	@${RM} ${OBJS}
+	@${RM} objs
 	@printf "${Bad}${BIRed}Delete *.o${NoColor}${Bad}\n"
 
 fclean: clean

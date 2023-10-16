@@ -17,13 +17,22 @@ INC = -I ./
 ###############################################################################
 NAME = ex00
 
-CC = g++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CPP = g++
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 FSANITIZE = -fsanitize=address -g
-CPPFLAGS = -MMD
+CPPFLAGS += -MMD
 RM = rm -rf
+
+ifeq ($(UNAME_S),Linux)
+	sanitize: CPPFLAGS += -pedantic -g3 -fsanitize=address -fsanitize=leak -fsanitize=undefined -fsanitize=bounds -fsanitize=null
+endif
+ifeq ($(UNAME_S),Darwin)
+	sanitize: CPPFLAGS += -pedantic -g3 -fsanitize=address
+endif
+sanitize: $(NAME) #no funciona
+
 ################################################################################
-.PHONY: all re fclean clean
+.PHONY: all re fclean clean sanitize
 ###############################################################################
 #                                              OPTIONS                        #
 ###############################################################################
@@ -31,7 +40,7 @@ RM = rm -rf
 all: ${NAME}
 
 ${NAME}: objs ${OBJS}
-	${CC}  ${CFLAGS} ${OBJS} -o ${NAME}
+	${CPP}  ${CPPFLAGS} ${OBJS} -o ${NAME}
 	@printf "\n${God}${BIGreen}[Create] ${BIBlue}${NAME}${NoColor}${NoColor}${God}\n"
 
 ${LFT_NAME}:
@@ -40,9 +49,7 @@ objs:
 	@mkdir -p	objs/srcs
 
 objs/%.o: %.cpp
-	#@${CC} -c ${CFLAGS} ${CPPFLAGS} $^ -o $@ ${INC}
-	@${CC} -MM -MT $@ $< > $*.d
-	@${CC} -c ${CFLAGS} $^ -o $@ ${INC}
+	$(CPP) $(CPPFLAGS) -c $< -o $@ ${INC}
 	@printf "${BIGreen}[Compiled]${BIBlue} $^ ${NoColor}to ${BIPurple}$@ ${NoColor}                       \r"
 
 -include $(DEPS)

@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 17:53:04 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/16 16:16:57 by tvillare         ###   ########.fr       */
+/*   Created: 2023/10/16 16:45:23 by tvillare          #+#    #+#             */
+/*   Updated: 2023/10/16 17:16:11 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Fixed.hpp"
+#include "Point.hpp"
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+Point::Point()
+: x(Fixed()),
+  y(Fixed()){}
+
+Point::Point(float _x, float _y)
+: x(Fixed(_x)),
+  y(Fixed(_y)) {}
+
+Point::~Point()
+{}
+
+Point::Point(const Point &other)
+: x(other.x),
+  y(other.y){}
+
+Point	&Point::operator=(const Point &other)
+{
+	(void)other;
+	return (*this);
 }
