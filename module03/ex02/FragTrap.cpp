@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 19:29:28 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/17 16:02:14 by tvillare         ###   ########.fr       */
+/*   Created: 2023/10/17 18:21:43 by tvillare          #+#    #+#             */
+/*   Updated: 2023/10/17 18:28:26 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 
-ScavTrap::ScavTrap(const std::string &name)
+FragTrap::FragTrap(const std::string &name)
 : ClapTrap(name) {
 	//_name = name;
 	_HitPoints = 100;
 	_EnergyPoints = 50;
 	_AttackDamage = 20;
-	std::cout << "Constructor ScavTrap" << std::endl;
+	std::cout << "Constructor FragTrap" << std::endl;
 }
 
 
-ScavTrap::~ScavTrap() {
-	std::cout << "Destructor ScavTrap" << std::endl;
+FragTrap::~FragTrap() {
+	std::cout << "Destructor FragTrap" << std::endl;
 }
 
-void	ScavTrap::attack(const std::string& target)
+void	FragTrap::attack(const std::string& target)
 {
 	if (_HitPoints > 0 && _EnergyPoints > 0)
 	{
-		std::cout << "ScavTrap "<< _name << " attacks " << target << ", causing " << _AttackDamage << "points of damage!" << std::endl;
+		std::cout << "FragTrap "<< _name << " attacks " << target << ", causing " << _AttackDamage << " points of damage!" << std::endl;
 		_EnergyPoints--;
 	}
 }
-void	ScavTrap::guardGate( void )
+void	FragTrap::highFivesGuys( void )
 {
 	if (_HitPoints > 0)
 	{
-		std::cout << "ScavTrap "<< _name << "is on guard" << std::endl;
+		std::cout << "FragTrap "<< _name << " highFivesGuys" << std::endl;
 	}
 }

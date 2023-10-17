@@ -2,7 +2,7 @@
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
-SRCSCFILES = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCSCFILES = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 
 SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}}
@@ -15,7 +15,7 @@ INC = -I ./
 ###############################################################################
 #                                              SETTINGS                       #
 ###############################################################################
-NAME = ex01
+NAME = ex02
 
 CPP = g++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
