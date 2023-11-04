@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 18:21:47 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/18 11:56:33 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/10/18 11:57:38 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class FragTrap: public ClapTrap
 		FragTrap(const std::string &name);
 		~FragTrap();
 		void	highFivesGuys(void);
-		void	attack(const std::string& target);
+		void	attack(const std::string& target)
 };
 
 

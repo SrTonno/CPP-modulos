@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:23:52 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/03 17:03:00 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:33:52 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Contact {
 		std::string	phone_number;
 	public:
 		void		print_full_contact();
-		void		print_contact();
+		void		print_contact(int i);
 		void		add_contact();
 };
 

@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 18:21:47 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/18 11:56:33 by tvillare         ###   ########.fr       */
+/*   Created: 2023/11/03 19:36:12 by tvillare          #+#    #+#             */
+/*   Updated: 2023/11/04 15:41:28 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
 
-class FragTrap: public ClapTrap
+class Cat: public Animal
 {
 	public:
-		FragTrap(const std::string &name);
-		~FragTrap();
-		void	highFivesGuys(void);
-		void	attack(const std::string& target);
+		Cat();
+		~Cat();
+		Cat(const std::string &_type);
+		Cat(const Cat &other);
+		Cat			&operator=(const Cat &other);
+		virtual void	makeSound() const;
 };
+
 
 

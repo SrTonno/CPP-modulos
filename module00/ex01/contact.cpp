@@ -6,12 +6,20 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 19:03:04 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/03 18:44:22 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:54:45 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <cstdlib>
+#include <iomanip>
+
+std::string	formatString(const std::string &input) {
+	if (input.size() > 10) {
+		return input.substr(0, 9) + ".";
+	}
+	return input;
+}
 
 std::string	input_str(std::string action)
 {
@@ -75,8 +83,11 @@ void Contact::add_contact()
 	}
 }
 
-void Contact::print_contact() {
-	std::cout << '|' << name << '|' << last_name << '|' << nickname << std::endl;
+void Contact::print_contact(int i) {
+	std::cout << std::setw(10) << i << "|";
+	std::cout << std::setw(10) << formatString(name) << "|";
+	std::cout << std::setw(10) << formatString(last_name) << "|";
+	std::cout << std::setw(10) << formatString(nickname) << "|" << std::endl;
 }
 
 void PhoneBook::add_phone() {
@@ -85,15 +96,15 @@ void PhoneBook::add_phone() {
 }
 
 void PhoneBook::search_phone() {
-		int	i;
+	int	i;
 	int	num;
 
 	i = 0;
 	while (i < last && i < 8){
-		std::cout << (i + 1);
-		name[i++].print_contact();
+		name[i].print_contact((i + 1));
+		i++;
 	}
 	num = input_int();
 	if (0 < num && num < 8 && last != 0)
-		name[num - 1].print_contact();
+		name[num - 1].print_full_contact();
 }

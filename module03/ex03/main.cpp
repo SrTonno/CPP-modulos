@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 18:21:47 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/18 11:56:33 by tvillare         ###   ########.fr       */
+/*   Created: 2023/10/16 19:08:25 by tvillare          #+#    #+#             */
+/*   Updated: 2023/10/17 18:24:04 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-#include "ClapTrap.hpp"
-
-class FragTrap: public ClapTrap
+int main()
 {
-	public:
-		FragTrap(const std::string &name);
-		~FragTrap();
-		void	highFivesGuys(void);
-		void	attack(const std::string& target);
-};
+	ClapTrap	a("PACO");
+	ScavTrap	b("MARIA");
+	FragTrap	c("MARIANO");
 
-
+	a.attack("MARIA");
+	b.takeDamage(0);
+	b.attack("PACO");
+	a.takeDamage(20);
+	b.guardGate();
+	c.highFivesGuys();
+	return (0);
+}
