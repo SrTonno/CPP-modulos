@@ -2,7 +2,7 @@
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
-SRCSCFILES = main.cpp cat.cpp dog.cpp Animal.cpp Brain.cpp
+SRCSCFILES = main.cpp cat.cpp dog.cpp AAnimal.cpp Brain.cpp
 
 
 SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}}
