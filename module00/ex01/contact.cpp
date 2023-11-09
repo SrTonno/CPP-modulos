@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 19:03:04 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/19 18:54:45 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/09 17:35:06 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ std::string	input_str(std::string action)
 {
 	std::string	name;
 
-	while (1){
+	while (std::cin.fail() == false){
 		std::cout << "Dime tu " << action << ": ";
 		std::getline(std::cin, name);
 		if (!name.empty())
-			break ;
+			return name;
 	}
-	return name;
+	return ("");
 }
 
 int	is_num(std::string str)
@@ -76,7 +76,7 @@ void Contact::add_contact()
 	name = input_str("name");
 	nickname = input_str("nickname");
 	darkest_secret = input_str("darkest secret");
-	while (1) {
+	while (std::cin.fail() == false) {
 		phone_number = input_str("phone number");
 		if (is_num(phone_number) == 1 && phone_number.size() == 9)
 			break ;

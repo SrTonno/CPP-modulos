@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:25:44 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/03 16:04:37 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/09 17:40:33 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 	std::string	input;
 
 	std::cout << "Bienbenido a PhoneBook\n" << std::endl;
-	while (1) {
+	while (std::cin.fail() == false) {
 		std::cout << "> ";
 		//std::cin >> input;
 		std::getline(std::cin, input);
@@ -29,4 +29,6 @@ int	main(void)
 		else if (input == "EXIT")
 			break ;
 	}
+	if (std::cin.fail() == true)
+		std::cout << "\nERROR cin" << std::endl;
 }
