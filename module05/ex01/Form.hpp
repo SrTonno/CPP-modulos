@@ -16,7 +16,7 @@ class Form
 {
 	private:
 		const	std::string name_;
-		bool	isSigned;
+		bool	isSigned_;
 		
 	public:
 		Form(/* args */);

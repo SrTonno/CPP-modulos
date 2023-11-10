@@ -30,7 +30,7 @@ Dog::~Dog()
 }
 
 Dog::Dog(const Dog &other)
-{
+: AAnimal(other){
 	std::cout << "DOG: copia" << std::endl;
 	*this = other;
 }

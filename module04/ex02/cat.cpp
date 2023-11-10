@@ -29,7 +29,7 @@ Cat::~Cat(){
 }
 
 Cat::Cat(const Cat &other)
-{
+:AAnimal(other) {
 	std::cout << "CAT: copia" << std::endl;
 	*this = other;
 }
