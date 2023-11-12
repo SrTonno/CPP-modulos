@@ -10,7 +10,7 @@ SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}}
 OBJS = $(SRCS:%.cpp=objs/%.o)
 DEPS = $(OBJS:%.o=%.d)
 
-INC = -I ./include/
+INC = -I ./
 
 ###############################################################################
 #                                              SETTINGS                       #

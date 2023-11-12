@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:05:12 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/09 16:29:23 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:55:07 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,9 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	(void)other;
-	/*if (this != &other) {
-		_name = other._name;
-		_HitPoints = other._HitPoints;
-		_AttackDamage = other._AttackDamage;
-		_EnergyPoints = other._EnergyPoints;
-	}*/
+	if (this != &other) {
+		*this = other;
+	}
 	return (*this);
 }
 
@@ -87,4 +84,19 @@ void	Bureaucrat::down_grade()
 std::ostream& operator<<(std::ostream &out, Bureaucrat const &f) {
 	out << f.getName() << ", bureaucrat grade " << f.getGrade();
 	return (out);
+}
+
+void	Bureaucrat::signForm(Form &f)
+{
+	try {
+		if (grade_ < f.getGradeToSign())
+			throw "GradeTooHigh";
+		else
+			throw "Low";
+		std::cout << name_ << f.getName() << std::endl;
+		f.beSigned(*this);
+	}
+	catch(const char *error) {
+		std::cerr << name_ << "couldn’t sign" << name_ << "because" << error << "." << std::endl;;
+	}
 }
