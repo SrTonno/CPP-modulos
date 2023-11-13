@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:56:59 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/12 19:35:50 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/13 12:48:46 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class Form
 {
 	private:
 		const std::string	name_;
-		bool				isSigned_;
 		const int			gradeToSign_;
 		const int			gradeToExecute_;
+		bool				isSigned_;
 
 	public:
 		Form(const std::string &name, int gradeToSign, int gradeToExecute);

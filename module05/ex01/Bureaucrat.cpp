@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:05:12 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/12 18:55:07 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/13 13:36:22 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,12 +91,12 @@ void	Bureaucrat::signForm(Form &f)
 	try {
 		if (grade_ < f.getGradeToSign())
 			throw "GradeTooHigh";
-		else
-			throw "Low";
-		std::cout << name_ << f.getName() << std::endl;
+		//else
+			//throw "Low";
+		std::cout << name_ << " " << f.getName() << std::endl;
 		f.beSigned(*this);
 	}
 	catch(const char *error) {
-		std::cerr << name_ << "couldn’t sign" << name_ << "because" << error << "." << std::endl;;
+		std::cerr << name_ << " couldn’t sign " << name_ << " because" << error << "." << std::endl;;
 	}
 }
