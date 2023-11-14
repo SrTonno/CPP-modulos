@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:36:58 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/14 15:41:32 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/14 16:08:51 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ void	write_char(char str) //esta mal
 
 void especial_float(const std::string &str)
 {
-	std::cout << "char:\t impossible\n" \
-			<< "int:\t impossible\n" \
-			<< "float: " << str << "\n"  \
-			<< "double: " << str.substr(0, str.size() - 1) \
+	std::cout << "char:\t impossible\n"
+			<< "int:\t impossible\n"
+			<< "float: " << str << "\n"
+			<< "double: " << str.substr(0, str.size() - 1)
 			<< std::endl;
 }
 

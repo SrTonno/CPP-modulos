@@ -2,7 +2,7 @@
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
-SRCSCFILES = main.cpp parser.cpp print.cpp
+SRCSCFILES = main.cpp Data.cpp
 
 SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}}
 
@@ -14,16 +14,16 @@ INC = -I ./
 ###############################################################################
 #                                              SETTINGS                       #
 ###############################################################################
-NAME = convert
+NAME = ex01
 
 CPP = g++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-CPPFLAGS += -MMD
 FSANITIZE = -fsanitize=address -g
+CPPFLAGS += -MMD
 RM = rm -rf
 
 
-################################################################################
+###############################################################################
 .PHONY: all re fclean clean sanitize
 ###############################################################################
 #                                              OPTIONS                        #
@@ -41,8 +41,8 @@ objs:
 	@mkdir -p	objs/srcs
 
 objs/%.o: %.cpp
-	@$(CPP) $(CPPFLAGS) -c $< -o $@ ${INC}
-	@printf "${BIGreen}[Compiled]${BIBlue} $^ ${NoColor}to ${BIPurple}$@ ${NoColor}                         \r"
+	$(CPP) $(CPPFLAGS) -c $< -o $@ ${INC}
+	@printf "${BIGreen}[Compiled]${BIBlue} $^ ${NoColor}to ${BIPurple}$@ ${NoColor}                       \r"
 
 -include $(DEPS)
 
