@@ -2,7 +2,7 @@
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
-SRCSCFILES = main.cpp Data.cpp
+SRCSCFILES = main.cpp Base.cpp
 
 SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}}
 
@@ -14,7 +14,7 @@ INC = -I ./
 ###############################################################################
 #                                              SETTINGS                       #
 ###############################################################################
-NAME = ex01
+NAME = ex02
 
 CPP = g++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
