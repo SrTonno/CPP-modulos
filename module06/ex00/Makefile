@@ -2,8 +2,7 @@
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
-SRCSCFILES = main.cpp cat.cpp dog.cpp Animal.cpp Brain.cpp
-
+SRCSCFILES = main.cpp parser.cpp print.cpp
 
 SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}}
 
@@ -15,7 +14,7 @@ INC = -I ./
 ###############################################################################
 #                                              SETTINGS                       #
 ###############################################################################
-NAME = ex02
+NAME = ex00
 
 CPP = g++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98

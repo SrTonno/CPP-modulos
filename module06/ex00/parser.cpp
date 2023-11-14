@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:34:08 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/13 17:23:03 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/14 13:32:01 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,10 @@ int isFloat(const std::string &str)
 	{
 		if (str[i] < '0' || str[i] > '9')
 		{
-			if (str[i] == '.' && p == 0) {
+			if (str[i] == '.' && p == 0)
 				p = 1;
-				continue;
-			}
-			return (0);
+			else
+				return (0);
 		}
 		i++;
 	}
@@ -62,11 +61,10 @@ int isDouble(const std::string &str)
 	{
 		if (str[i] < '0' || str[i] > '9')
 		{
-			if (str[i] == '.' && p == 0) {
+			if (str[i] == '.' && p == 0)
 				p = 1;
-				continue;
-			}
-			return (0);
+			else
+				return (0);
 		}
 		i++;
 	}
@@ -86,7 +84,7 @@ int	parser(const std::string &str)
 {
 	if (str == "-inf" || str == "+inf" | str == "nan")
 		return (DOUBLE_SPECIAL);
-	else if (str == "-inf" || str == "+inf" | str == "nan")
+	else if (str == "-inff" || str == "+inff" | str == "nanf")
 		return (FLOAT_SPECIAL);
 	else if (isFloat(str))
 		return(FLOAT);
