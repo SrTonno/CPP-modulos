@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:36:02 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/15 13:41:04 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:14:55 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	iter(I *pointer, I len, I (*func)(I))
 	i = 0;
 	while(i < len)
 	{
-		pointer[i] = func(pointer[i])
+		pointer[i] = func(pointer[i]);
 		i++;
 	}
 }

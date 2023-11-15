@@ -6,20 +6,22 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:41:08 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/15 13:47:02 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:22:15 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Iter.hpp"
+#include "iter.hpp"
 
-int intup(int i)
+int	intup(int i)
 {
-	return(i++);
+	return(++i);
 }
 int main()
 {
-	i[2];
+	int i[2];
 	i[0] = 1;
 	i[1] = 2;
-	::Iter(&i, 2, intup);
+	::iter(i, 2, intup);
+	std::cout << i[0] << "  " << i[1] << std::endl;
+	return(0);
 }
