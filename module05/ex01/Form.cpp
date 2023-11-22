@@ -6,28 +6,18 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:56:44 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/13 13:30:09 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:49:33 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 Form::Form(const std::string &name, int gradeToSign, int gradeToExecute)
-: name_(name), gradeToSign_(gradeToSign), gradeToExecute_(gradeToExecute), isSigned_(false){
-	try
-	{
-		if (gradeToSign > 150 || gradeToExecute > 150) {
-			isSigned_ = 150;
-			throw "Form::GradeTooHighException";
-		}
-		else if (gradeToSign < 0 || gradeToExecute < 0) {
-			isSigned_ = 0;
-			throw "Form::GradeTooLowException.";
-		}
-	}
-	catch(const char *error) {
-		std::cerr << error << std::endl;
-	}
+: name_(name), gradeToSign_(gradeToSign), gradeToExecute_(gradeToExecute), isSigned_(false) {
+	if (gradeToSign > 150 || gradeToExecute > 150)
+		throw "Form::GradeTooHighException";
+	else if (gradeToSign < 0 || gradeToExecute < 0)
+		throw "Form::GradeTooLowException.";
 }
 
 Form::~Form() {}
@@ -70,15 +60,10 @@ std::ostream& operator<<(std::ostream &out, Form const &f)
 }
 void	Form::beSigned(Bureaucrat &b)
 {
-	try {
-		if (gradeToSign_ < b.getGrade()) {
+	if (gradeToSign_ > b.getGrade())
 			throw "Form::GradeTooLowException.";
-		}
-		if (isSigned_ == true)
-			throw "Form: Couldn't sign the form(low exception)";
-		isSigned_ = true;
-	}
-	catch(const char *error) {
-		std::cerr << error << std::endl;
-	}
+	if (isSigned_ == true)
+		throw "Form: Form already signed";
+	isSigned_ = true;
+
 }
