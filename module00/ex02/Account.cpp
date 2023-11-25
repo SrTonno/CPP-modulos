@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 12:11:07 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/24 14:50:44 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/25 18:50:49 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Account::Account( void )
 Account::~Account( void ){
 	Account::_displayTimestamp();
 	std::cout <<  "index:" <<_accountIndex
-		<< ";amount:" << _nbDeposits
+		<< ";amount:" << _amount
 		<< ";closed" << std::endl;
 }
 
@@ -66,6 +66,10 @@ int	Account::getNbDeposits( void ){
 
 int	Account::getNbWithdrawals( void ){
 	return(Account::_totalNbWithdrawals);
+}
+
+int		Account::checkAmount( void ) const{
+	return(_amount);
 }
 
 void	Account::displayAccountsInfos( void ){
@@ -90,9 +94,9 @@ void	Account::makeDeposit( int deposit ){
 		<< ";amount:" << _amount
 		<< ";nb_deposits:" << _nbDeposits << std::endl;
 }
+
 bool	Account::makeWithdrawal( int withdrawal )
 {
-	//std::cout << _amount << " ->"  <<  withdrawal << std::endl;
 	if (withdrawal > _amount)
 	{
 		Account::_displayTimestamp();
@@ -114,13 +118,13 @@ bool	Account::makeWithdrawal( int withdrawal )
 	_amount -= withdrawal;
 	return (true);
 }
-int		Account::checkAmount( void ) const{
-	return(_amount);
-}
+
 void	Account::displayStatus( void ) const{
 	Account::_displayTimestamp();
-	std::cout << "index:" <<  _accountIndex << ";amount:" << _amount
-		<< ";deposits:" <<  _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl;
+	std::cout << "index:" <<  _accountIndex
+		<< ";amount:" << _amount
+		<< ";deposits:" <<  _nbDeposits
+		<< ";withdrawals:" << _nbWithdrawals << std::endl;
 }
 
 
@@ -129,6 +133,6 @@ void	Account::_displayTimestamp( void ){
 	char buffer[20];
 	std::tm* tiempo_info = std::localtime(&tiempo_actual);
 	std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S]", tiempo_info);
-	std::cout << "[" << buffer << "] ";
+	std::cout << buffer;
 	//std::cout << "[19920104_091532] ";
 }

@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 18:25:44 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/25 17:05:55 by tvillare         ###   ########.fr       */
+/*   Created: 2023/11/25 16:49:57 by tvillare          #+#    #+#             */
+/*   Updated: 2023/11/25 17:00:12 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-void PhoneBook::add_phone() {
-	name[last % 8].add_contact();
-	last++;
-}
+int	main(void)
+{
+	PhoneBook	contact;
+	std::string	input;
 
-void PhoneBook::search_phone() {
-	unsigned int	i;
-	unsigned int	num;
-
-	i = 0;
-	while (i < last && i < 8){
-		name[i].print_contact((i + 1));
-		i++;
+	std::cout << "WELLCOME to PhoneBook\n" << std::endl;
+	while (std::cin.fail() == false) {
+		std::cout << "> ";
+		std::getline(std::cin, input);
+		if (input == "ADD")
+			contact.add_phone();
+		else if (input == "SEARCH")
+			contact.search_phone();
+		else if (input == "EXIT")
+			break ;
 	}
-	num = input_int();
-	if (0 < num && num < 8 && last >= num)
-		name[num - 1].print_full_contact();
+	if (std::cin.fail() == true)
+		std::cout << "\nERROR cin" << std::endl;
 }
+
+
+

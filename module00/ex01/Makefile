@@ -2,7 +2,7 @@
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
-SRCSCFILES = contact.cpp PhoneBook.cpp
+SRCSCFILES = Contact.cpp PhoneBook.cpp main.cpp utils.cpp
 
 #UTILDIR = ${addprefix ${SRCSDIR}, utils/}
 #UTILFILES = ft_atoi.c utils.c ft_isdigit.c
