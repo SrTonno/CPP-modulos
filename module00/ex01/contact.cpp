@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 16:50:29 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/25 17:25:52 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/27 18:52:23 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ void Contact::print_contact(int i) {
 	std::cout << std::setw(11) << i << "|";
 	std::cout << std::setw(11) << formatString(name) << "|";
 	std::cout << std::setw(11) << formatString(last_name) << "|";
-	std::cout << std::setw(11) << formatString(nickname) << "|" << std::endl;
+	std::cout << std::setw(11) << formatString(last_name) << "|" << std::endl;
 }
 
