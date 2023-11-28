@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:54:42 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/14 19:18:54 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:07:26 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Fixed &Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &other) {
-		num = other.num;
+		num = other.getRawBits();
 	}
 	return (*this);
 }

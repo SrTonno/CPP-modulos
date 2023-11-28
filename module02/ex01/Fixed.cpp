@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:54:42 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/15 19:55:47 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:38:46 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@ Fixed::Fixed(void)
 }
 
 Fixed::Fixed(const int _num)
-: num(_num) {
-	std::cout << "Default constructor called" << std::endl;
+{
+	std::cout << "Int constructor called" << std::endl;
+	num = (_num << bits);
 }
 
 Fixed::Fixed(const float _num)
-: num(_num) {
-	std::cout << "Default constructor called" << std::endl;
+{
+	std::cout << "Float constructor called" << std::endl;
+	num = roundf((float)_num * (1 << bits));
 }
 
 Fixed::~Fixed() {
@@ -32,14 +34,15 @@ Fixed::~Fixed() {
 }
 
 Fixed::Fixed(const Fixed &other)
-: num(other.num) {
+{
 	std::cout << "Copy constructor called" << std::endl;
+	num = other.getRawBits();
 }
 
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other) {
 		num = other.num;
 	}
