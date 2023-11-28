@@ -1,16 +1,10 @@
-include colors.mk
 ###############################################################################
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
 SRCSCFILES = main.cpp
 
-#UTILDIR = ${addprefix ${SRCSDIR}, utils/}
-#UTILFILES = ft_atoi.c utils.c ft_isdigit.c
-
-
-SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}} \
-		#${addprefix ${UTILDIR}, ${UTILFILES}}
+SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}}
 
 OBJS = $(SRCS:%.cpp=objs/%.o)
 DEPS = $(OBJS:%.o=%.d)
@@ -22,21 +16,14 @@ INC = -I ./
 ###############################################################################
 NAME = ex02
 
-CPP = g++
+CPP = clang++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 FSANITIZE = -fsanitize=address -g
 CPPFLAGS += -MMD
 RM = rm -rf
 
-ifeq ($(UNAME_S),Linux)
-	sanitize: CPPFLAGS += -pedantic -g3 -fsanitize=address -fsanitize=leak -fsanitize=undefined -fsanitize=bounds -fsanitize=null
-endif
-ifeq ($(UNAME_S),Darwin)
-	sanitize: CPPFLAGS += -pedantic -g3 -fsanitize=address
-endif
-sanitize: $(NAME) #no funciona
 
-################################################################################
+###############################################################################
 .PHONY: all re fclean clean sanitize
 ###############################################################################
 #                                              OPTIONS                        #

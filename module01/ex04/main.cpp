@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:51:51 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/05 16:56:09 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:00:52 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <string>
 
 
-bool archivo_existe(const std::string &name)
+bool	archivo_existe(const std::string &name)
 {
 	bool i;
 
@@ -39,6 +39,7 @@ void	my_set(const std::string &linea, const std::string &s1, const std::string &
 	std::size_t	found;
 	std::size_t	i = 0;
 	std::size_t	j = 0;
+
 	while (linea[i] != '\0')
 	{
 		found = linea.find(s1 , i);
@@ -56,13 +57,12 @@ void	my_set(const std::string &linea, const std::string &s1, const std::string &
 	}
 	output << std::endl;
 }
+
 void	writte_file(std::ifstream &input, std::ofstream &output, const std::string &s1, const std::string &s2)
 {
 	std::string linea;
 	std::size_t found;
 
-	(void)output;
-	(void)s2;
 	while (std::getline(input, linea)) {  // Lee el archivo línea por línea
 		found = linea.find(s1 ,0);
 		if (found !=std::string::npos)

@@ -5,6 +5,7 @@ SRCSDIR = ./
 SRCSCFILES = main.cpp Harl.cpp
 
 
+
 SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}}
 
 OBJS = $(SRCS:%.cpp=objs/%.o)

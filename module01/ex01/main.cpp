@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:19:14 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/04 13:01:40 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/28 15:44:22 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ int main(void) {
 	Zombie *horde;
 	horde = zombieHorde(7, "PAC");
 	delete[] (horde);
-	//system("leaks -q ex01");
+	system("leaks -q ex01");
 	return 0;
 }

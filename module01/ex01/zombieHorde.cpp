@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:49:48 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/04 13:02:15 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/28 15:46:12 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Zombie*	zombieHorde( int N, std::string name )
 	int		i;
 
 	i = 1;
-	while (N > i) {
+	while (N >= i) {
 		z[i].set_name(name);
 		z[i++].announce();
 	}
