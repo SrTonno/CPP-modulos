@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 16:50:29 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/27 18:52:23 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:45:41 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	Contact::print_full_contact()
 {
 	std::cout << first_name << " | ";
 	std::cout << last_name << "| ";
-	std::cout << name << " | ";
 	std::cout << nickname << " | ";
 	std::cout << darkest_secret << " | ";
 	std::cout << phone_number << std::endl;
@@ -28,7 +27,6 @@ void Contact::add_contact()
 {
 	first_name = input_str("fisrt name");
 	last_name = input_str("last name");
-	name = input_str("name");
 	nickname = input_str("nickname");
 	darkest_secret = input_str("darkest secret");
 	while (std::cin.fail() == false) {
@@ -39,9 +37,9 @@ void Contact::add_contact()
 }
 
 void Contact::print_contact(int i) {
-	std::cout << std::setw(11) << i << "|";
-	std::cout << std::setw(11) << formatString(name) << "|";
-	std::cout << std::setw(11) << formatString(last_name) << "|";
-	std::cout << std::setw(11) << formatString(last_name) << "|" << std::endl;
+	std::cout << std::setw(10) << i << "|";
+	std::cout << std::setw(10) << formatString(first_name) << "|";
+	std::cout << std::setw(10) << formatString(last_name) << "|";
+	std::cout << std::setw(10) << formatString(nickname) << "|" << std::endl;
 }
 

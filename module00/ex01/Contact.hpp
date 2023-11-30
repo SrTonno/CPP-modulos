@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:10:49 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/27 18:49:00 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:45:57 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Contact {
 	private:
 		std::string first_name;
 		std::string last_name;
-		std::string name;
 		std::string nickname;
 		std::string	darkest_secret;
 		std::string	phone_number;

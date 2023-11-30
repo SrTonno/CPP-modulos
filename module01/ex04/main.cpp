@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:51:51 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/28 16:00:52 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:57:20 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ bool	archivo_existe(const std::string &name)
 {
 	bool i;
 
-	std::ifstream file((name + ".reverse").c_str());
+	std::ifstream file((name + ".replace").c_str());
 	i = file.good();
 	file.close ();
 	return i;
@@ -86,15 +86,15 @@ int main(int argc, char **argv)
 		return (0);
 	}
 	file_org = argv[1];
-	file_mod = file_org + ".reverse";
-	std::ofstream out_file(file_mod.c_str());
-	if (!out_file) {
-		std::cerr << "No se pudo crear el archivo '" << file_mod << "'" << std::endl;
-		return (1);
-	}
+	file_mod = file_org + ".replace";
 	std::ifstream in_file(file_org.c_str());
 	if (!in_file) {
 		std::cerr << "No se pudo leer el archivo '" << file_org << "'" << std::endl;
+		return (1);
+	}
+	std::ofstream out_file(file_mod.c_str());
+	if (!out_file) {
+		std::cerr << "No se pudo crear el archivo '" << file_mod << "'" << std::endl;
 		return (1);
 	}
 	writte_file(in_file, out_file, argv[2], argv[3]);

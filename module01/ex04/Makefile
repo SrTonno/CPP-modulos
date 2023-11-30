@@ -50,7 +50,7 @@ objs/%.o: %.cpp
 re: fclean all
 
 clean:
-	@${RM} objs
+	@${RM} objs *.replace
 	@printf "${Bad}${BIRed}Delete *.o${NoColor}${Bad}\n"
 
 fclean: clean
