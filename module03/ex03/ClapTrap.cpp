@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:19:13 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/17 19:12:17 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/10/17 15:46:53 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ ClapTrap::ClapTrap(const std::string &name)
   _AttackDamage(0){
 	std::cout << "Constructor ClapTrap" << std::endl;
 }
-
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 : _name(other._name),

@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:08:25 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/16 19:27:01 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/29 12:51:42 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main()
 	ClapTrap	b("MARIA");
 
 	a.attack("MARIA");
+	b.attack("Jonzalo");
 	b.takeDamage(0);
 	b.beRepaired(2);
 	b.takeDamage(20);

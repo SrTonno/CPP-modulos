@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:29:28 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/18 11:56:44 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/29 15:31:35 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,17 @@ void	ScavTrap::guardGate( void )
 	{
 		std::cout << "ScavTrap "<< _name << "is on guard" << std::endl;
 	}
+}
+ScavTrap::ScavTrap(const ScavTrap &other)
+:ClapTrap(other){}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &other)
+{
+	if (this != &other) {
+		_name = other._name;
+		_HitPoints = other._HitPoints;
+		_AttackDamage = other._AttackDamage;
+		_EnergyPoints = other._EnergyPoints;
+	}
+	return (*this);
 }

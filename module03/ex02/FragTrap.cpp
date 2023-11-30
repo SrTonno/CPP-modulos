@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 18:21:43 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/18 11:57:07 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/29 15:32:20 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,18 @@ void	FragTrap::attack(const std::string& target)
 		std::cout << "FragTrap "<< _name << " attacks " << target << ", causing " << _AttackDamage << " points of damage!" << std::endl;
 		_EnergyPoints--;
 	}
+}
+
+FragTrap::FragTrap(const FragTrap &other)
+:ClapTrap(other){}
+
+FragTrap &FragTrap::operator=(const FragTrap &other)
+{
+	if (this != &other) {
+		_name = other._name;
+		_HitPoints = other._HitPoints;
+		_AttackDamage = other._AttackDamage;
+		_EnergyPoints = other._EnergyPoints;
+	}
+	return (*this);
 }
