@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:02:53 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/01 13:56:33 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/01 19:29:46 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,7 @@ DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &other)
 void	DiamondTrap::whoAmI()
 {
 	std::cout << "name " << _name << " clap_name: " << ClapTrap::_name << std::endl;
+
+	std::cout << "Hitpoints " << _HitPoints << "Energy: " << _EnergyPoints << "Damage: "
+		<< _AttackDamage << std::endl;
 }

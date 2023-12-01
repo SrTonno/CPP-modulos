@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:08:25 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/01 12:48:06 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/01 19:29:52 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int main()
 	c.highFivesGuys();
 	d.attack("aa");
 	d.whoAmI();
+
 	return (0);
 }

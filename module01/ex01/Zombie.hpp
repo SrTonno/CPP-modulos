@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:06:55 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/04 12:59:25 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/01 18:57:37 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ class Zombie {
 	private:
 		std::string name;
 	public:
-		//Zombie(std::string _name);
+		Zombie(std::string _name);
+		Zombie();
 		void announce();
 		void set_name(std::string _name);
 };

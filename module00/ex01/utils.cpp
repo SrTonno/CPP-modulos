@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:12:30 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/27 18:50:28 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/01 16:10:01 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 std::string	formatString(const std::string &input) {
 	if (input.size() > 10) {
-		return input.substr(0, 10) + ".";
+		return input.substr(0, 9) + ".";
 	}
 	return input;
 }

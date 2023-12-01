@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:51:51 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/30 15:57:20 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/01 19:14:09 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,7 @@ bool	archivo_existe(const std::string &name)
 	file.close ();
 	return i;
 }
-/*std::ofstream	create_file(const std::string &name)
-{
-	std::ofstream file((name + ".reverse").c_str());
 
-	if (!file) {
-		std::cerr << "No se pudo crear el archivo '" << (name + ".reverse") << "'" << std::endl;
-		return (NULL);
-	}
-	return (file);
-}*/
 void	my_set(const std::string &linea, const std::string &s1, const std::string &s2, std::ofstream &output)
 {
 	std::size_t	found;
@@ -43,7 +34,7 @@ void	my_set(const std::string &linea, const std::string &s1, const std::string &
 	while (linea[i] != '\0')
 	{
 		found = linea.find(s1 , i);
-		if (found !=std::string::npos)
+		if (found != std::string::npos)
 		{
 			j = 0;
 			while (i < found)
@@ -63,7 +54,7 @@ void	writte_file(std::ifstream &input, std::ofstream &output, const std::string 
 	std::string linea;
 	std::size_t found;
 
-	while (std::getline(input, linea)) {  // Lee el archivo línea por línea
+	while (std::getline(input, linea)) {
 		found = linea.find(s1 ,0);
 		if (found !=std::string::npos)
 			my_set(linea, s1, s2, output);
@@ -72,12 +63,9 @@ void	writte_file(std::ifstream &input, std::ofstream &output, const std::string 
 	}
 }
 
-
-
 int main(int argc, char **argv)
 {
 	std::string linea;
-	std::ifstream archivo(argv[1]);  // Abre el archivo en modo lectura
 	std::string file_mod;
 	std::string file_org;
 
@@ -98,8 +86,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	writte_file(in_file, out_file, argv[2], argv[3]);
-
-	in_file.close();  // Cierra el archivo
+	in_file.close();
 	out_file.close();
 	return 0;
 	return (0);
