@@ -6,15 +6,17 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:40:52 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/30 16:01:01 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/01 13:09:33 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int	main(void) //añadir algumentos
+int	main(int argc, char **argv)
 {
 	Harl harl;
 
-	harl.complain("debug");
+	if (argc != 2)
+		return (0);
+	harl.complain(argv[1]);
 }

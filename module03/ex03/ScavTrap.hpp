@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:29:39 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/29 15:34:06 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/11/30 19:30:21 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
+class ScavTrap: public virtual ClapTrap
 {
 	public:
 		ScavTrap(const std::string &name);
