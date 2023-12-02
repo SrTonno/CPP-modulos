@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:27:54 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/01 19:04:14 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/02 16:18:48 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int main() {
 	}
 	{
 		std::cout << "-------------HUMANB---------------" << std::endl;
-		Weapon club = Weapon("crude spiked club");
+		Weapon club = Weapon("crude spiked club :)");
 		HumanB jim("Jim");
 		jim.attack();
 		jim.setWeapon(club);
 		jim.attack();
-		club.setType("some other type of club");
+		club.setType("some other type of club :(");
 		jim.attack();
 	}
 	return (0);

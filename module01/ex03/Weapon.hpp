@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 13:18:38 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/04 16:44:34 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/02 16:19:46 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class Weapon {
 	private:
 		std::string type;
 	public:
-		Weapon(std::string _type);
-		const std::string getType();
-		void setType(std::string _type);
+		Weapon(const std::string &_type);
+		const std::string &getType();
+		void setType(const std::string &_type);
 };
 
