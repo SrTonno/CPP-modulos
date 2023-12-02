@@ -15,7 +15,7 @@ INC = -I ./
 ###############################################################################
 NAME = ex05
 
-CPP = clang++
+CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 FSANITIZE = -fsanitize=address -g
 CPPFLAGS += -MMD
