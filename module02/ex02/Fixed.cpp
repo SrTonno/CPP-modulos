@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:54:42 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/16 16:21:38 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/04 19:36:21 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,16 @@ Fixed::Fixed(void)
 	//std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int value) {
-	this->num = value << Fixed::bits;
+Fixed::Fixed(const int _num)
+{
+	//std::cout << "Int constructor called" << std::endl;
+	num = (_num << bits);
 }
 
-Fixed::Fixed(const float value) {
-	this->num = roundf(value *(1 << Fixed::bits));
+Fixed::Fixed(const float _num)
+{
+	//::cout << "Float constructor called" << std::endl;
+	num = roundf((float)_num * (1 << bits));
 }
 
 Fixed::~Fixed() {
@@ -34,6 +38,7 @@ Fixed::~Fixed() {
 Fixed::Fixed(const Fixed &other)
 : num(other.num) {
 	//std::cout << "Copy constructor called" << std::endl;
+	num = other.getRawBits();
 }
 
 /*********** ----------------- ***********/
@@ -53,7 +58,8 @@ Fixed Fixed::operator*(const Fixed &other) {
 
 Fixed Fixed::operator+(const Fixed &other) {
 	Fixed res(this->toFloat() + other.toFloat());
-	return res;}
+	return res;
+}
 
 Fixed Fixed::operator-(const Fixed &other) {
 	Fixed res(this->toFloat() - other.toFloat());
@@ -66,31 +72,31 @@ Fixed Fixed::operator/(const Fixed &other) {
 }
 
 /*********** COMPARADORES ***********/
-Fixed Fixed::operator>(const Fixed &other) {
+bool Fixed::operator>(const Fixed &other) {
 	return (this->getRawBits() > other.getRawBits());
 }
 
-Fixed Fixed::operator<(const Fixed &other) {
+bool Fixed::operator<(const Fixed &other) {
 	return (this->getRawBits() < other.getRawBits());
 }
 
-Fixed Fixed::operator<=(const Fixed &other) {
+bool Fixed::operator<=(const Fixed &other) {
 	return (this->getRawBits() <= other.getRawBits());
 }
 
-Fixed Fixed::operator>=(const Fixed &other) {
+bool Fixed::operator>=(const Fixed &other) {
 	return (this->getRawBits() <= other.getRawBits());
 }
 
-Fixed Fixed::operator>>(const Fixed &other) {
+bool Fixed::operator>>(const Fixed &other) {
 	return (this->getRawBits() <= other.getRawBits());
 }
 
-Fixed Fixed::operator!=(const Fixed &other) {
+bool Fixed::operator!=(const Fixed &other) {
 	return (this->getRawBits() != other.getRawBits());
 }
 
-Fixed Fixed::operator==(const Fixed &other) {
+bool Fixed::operator==(const Fixed &other) {
 	return (this->getRawBits() == other.getRawBits());
 }
 /*********** INCREMENTADORES & DECREMENTADORES ***********/
@@ -120,7 +126,6 @@ Fixed Fixed::operator--(int)
 }
 
 /*********** FUNCIONES ***********/
-
 int Fixed::getRawBits( void ) const {
 	//std::cout << "getRawBits member function called" << std::endl;
 	return (num);
@@ -131,7 +136,7 @@ void Fixed::setRawBits ( int const raw ){
 	num = raw;
 }
 
-float Fixed::toFloat(void) const {
+float Fixed:: toFloat(void) const {
 	return ((float)num / (1 << bits));
 }
 

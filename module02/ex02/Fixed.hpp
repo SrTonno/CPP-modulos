@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:53:31 by tvillare          #+#    #+#             */
-/*   Updated: 2023/10/16 16:11:05 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/04 19:35:42 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ class Fixed
 		Fixed	operator+(const Fixed &other);
 		Fixed	operator-(const Fixed &other);
 		Fixed	operator/(const Fixed &other);
-		Fixed	operator<(const Fixed &other);
-		Fixed	operator>(const Fixed &other);
-		Fixed	operator>>(const Fixed &other);
-		Fixed	operator>=(const Fixed &other);
-		Fixed	operator<=(const Fixed &other);
-		Fixed	operator!=(const Fixed &other);
-		Fixed	operator==(const Fixed &other);
+		bool	operator<(const Fixed &other);
+		bool	operator>(const Fixed &other);
+		bool	operator>>(const Fixed &other);
+		bool	operator>=(const Fixed &other);
+		bool	operator<=(const Fixed &other);
+		bool	operator!=(const Fixed &other);
+		bool	operator==(const Fixed &other);
 		Fixed	&operator++();
 		Fixed	operator++(int);
 		Fixed	&operator--();
