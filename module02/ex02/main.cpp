@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:53:04 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/04 19:41:27 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/04 19:43:34 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main( void ) {
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
-	std::cout << "--------------------------------------ESTRA-------------------------" << std::endl;
+	std::cout << "--------------------------------------EXTRA-------------------------" << std::endl;
 	resu = a + a;
 	std::cout << "a + a=resu (a)" << a << " = "<< resu << std::endl;
 	resu = a * 10000;

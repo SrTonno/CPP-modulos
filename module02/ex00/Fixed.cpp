@@ -6,11 +6,13 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:54:42 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/28 18:07:26 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/05 16:55:44 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int	Fixed::bits = 8;
 
 Fixed::Fixed(void)
 : num(0) {
@@ -22,14 +24,15 @@ Fixed::~Fixed() {
 }
 
 Fixed::Fixed(const Fixed &other)
-: num(other.num) {
+{
 	std::cout << "Copy constructor called" << std::endl;
+	num = other.getRawBits();
 }
 
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Copy assignment operator called " << std::endl;
 	if (this != &other) {
 		num = other.getRawBits();
 	}

@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:54:42 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/04 19:36:21 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:39:48 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,6 @@ bool Fixed::operator>=(const Fixed &other) {
 	return (this->getRawBits() <= other.getRawBits());
 }
 
-bool Fixed::operator>>(const Fixed &other) {
-	return (this->getRawBits() <= other.getRawBits());
-}
-
 bool Fixed::operator!=(const Fixed &other) {
 	return (this->getRawBits() != other.getRawBits());
 }
@@ -149,6 +145,8 @@ std::ostream& operator<<(std::ostream &out, Fixed const &f)
 	out << f.toFloat();
 	return (out);
 }
+
+/*__MIN/MAX__*/
 
 const Fixed &Fixed::max(Fixed const& a, Fixed const& b)
 {
