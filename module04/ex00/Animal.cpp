@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 13:46:05 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/04 15:49:26 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/09 16:40:40 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 Animal::Animal()
 : type("UNDEFINED"){}
+
 Animal::Animal(const std::string &_type)
 : type(_type){}
 

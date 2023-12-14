@@ -65,6 +65,8 @@
 		"iomanip": "cpp",
 		"stack": "cpp",
 		"*.d": "cpp",
-		"__functional_03": "cpp"
+		"__functional_03": "cpp",
+		"memory_resource": "cpp",
+		"filesystem": "cpp"
 	}
 }

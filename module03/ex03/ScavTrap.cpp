@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:29:28 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/29 15:31:35 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/06 17:02:42 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,31 @@
 
 
 ScavTrap::ScavTrap(const std::string &name)
-: ClapTrap(name) {
-	//_name = name;
+{
+	_name =  name;
 	_HitPoints = 100;
 	_EnergyPoints = 50;
 	_AttackDamage = 20;
-	std::cout << "Constructor ScavTrap" << std::endl;
+	std::cout << _name << " Constructor ScavTrap" << std::endl;
 }
 
+ScavTrap::ScavTrap()
+{
+	_name = "ScavTrap";
+	_HitPoints = 100;
+	_EnergyPoints = 40;
+	_AttackDamage = 20;
+	std::cout << _name << " Constructor ScavTrap" << std::endl;
+}
 
 ScavTrap::~ScavTrap() {
-	std::cout << "Destructor ScavTrap" << std::endl;
+	std::cout << _name << " Destructor ScavTrap" << std::endl;
 }
 
 void	ScavTrap::attack(const std::string& target)
 {
 	if (_HitPoints > 0 && _EnergyPoints > 0) {
-		std::cout << "ScavTrap "<< _name << " attacks " << target << ", causing " << _AttackDamage << "points of damage!" << std::endl;
+		std::cout << "ScavTrap "<< _name << " attacks " << target << ", causing " << _AttackDamage << " points of damage!" << std::endl;
 		_EnergyPoints--;
 	}
 }

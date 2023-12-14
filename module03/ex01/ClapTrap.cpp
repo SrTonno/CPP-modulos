@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:19:13 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/29 12:56:33 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:01:18 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(const ClapTrap &other)
   _AttackDamage(other._AttackDamage){}
 
 ClapTrap::~ClapTrap(){
-	std::cout << "Destructor ClapTrap" << std::endl;
+	std::cout << this->_name << " ClapTrap destroyed" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)

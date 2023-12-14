@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:19:13 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/29 12:51:58 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:59:57 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ ClapTrap::ClapTrap(const ClapTrap &other)
   _EnergyPoints(other._EnergyPoints),
   _AttackDamage(other._AttackDamage){}
 
-ClapTrap::~ClapTrap(){}
+ClapTrap::~ClapTrap() {
+	std::cout << this->_name << " ClapTrap destroyed" << std::endl;
+}
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {

@@ -2,7 +2,7 @@
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
-SRCSCFILES = main.cpp AMateria.cpp ICharacter.cpp IMateriaSource.cpp
+SRCSCFILES = MateriaSource.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp  main.cpp
 
 
 SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}}

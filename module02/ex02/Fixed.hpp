@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:53:31 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/05 17:42:49 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:58:03 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ class Fixed
 		bool	operator!=(const Fixed &other);
 		bool	operator==(const Fixed &other);
 		/*__INCREMENT/DECREMENT_OPERATORS__*/
-		Fixed	&operator++();
-		Fixed	operator++(int);
-		Fixed	&operator--();
-		Fixed	operator--(int);
+		Fixed	&operator++(); /* Pre  - increment */
+		Fixed	&operator--(); /* Pre  - decrement */
+		Fixed	operator++(int); /* Post - increment */
+		Fixed	operator--(int); /* Post - decrement */
 		/*__GET/TO__*/
 		int		toInt(void) const;
 		float	toFloat(void) const;

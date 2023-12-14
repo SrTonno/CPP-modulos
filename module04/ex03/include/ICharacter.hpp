@@ -6,13 +6,15 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 14:33:11 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/05 14:35:12 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/14 18:39:04 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

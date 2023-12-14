@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 15:55:56 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/14 18:34:36 by tvillare         ###   ########.fr       */
+/*   Created: 2023/12/11 17:39:16 by tvillare          #+#    #+#             */
+/*   Updated: 2023/12/14 18:37:46 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-# include "AMateria.hpp"
+# include <iostream>
+# include <string>
 # include "ICharacter.hpp"
 
 // class AMateria;
-class ICharacter;
+// class ICharacter;
 
-class Ice: public AMateria
+class Character: public ICharacter
 {
+	private:
+		std::string	name_;
+		AMateria	*inventary_[4];
 	public:
-		Ice();
-		Ice(std::string const &type);
-		~Ice();
-		Ice(const Ice &other);
-		Ice	&operator=(const Ice &other);
-		//[...]
-		std::string const & getType() const; //Returns the materia type
-		virtual AMateria* clone() const;
-		virtual void use(ICharacter& target);
+		Character(const std::string &name);
+		virtual ~Character();
+		Character(const Character &other);
+		Character	&operator=(const Character &other);
+		std::string const & getName() const;
+		void equip(AMateria* m);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
 };

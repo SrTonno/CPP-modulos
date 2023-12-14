@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 14:02:32 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/05 14:02:33 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/09 17:50:16 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ AAnimal &AAnimal::operator=(const AAnimal &other)
 const	std::string	AAnimal::getType()	const{
 	return(type);
 }
+/*
 void	AAnimal::makeSound() const
 {
 	std::cout << "Tipical undefined Aanimal sound... ⁇" << std::endl;
-}
+}*/

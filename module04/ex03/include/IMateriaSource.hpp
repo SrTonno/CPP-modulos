@@ -6,13 +6,14 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 14:24:51 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/05 14:35:17 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/12 19:04:00 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "AMateria.hpp"
+# include "AMateria.hpp"
+class AMateria;
 
 class IMateriaSource
 {

@@ -6,11 +6,15 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 14:22:29 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/05 14:23:27 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/12 19:05:34 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
 
 int	main()
 {

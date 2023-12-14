@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:02:55 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/01 13:50:00 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/06 17:01:37 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class DiamondTrap: public virtual ScavTrap, public virtual FragTrap
+class DiamondTrap:  public ScavTrap, public FragTrap
 {
 	private:
 		std::string _name;
