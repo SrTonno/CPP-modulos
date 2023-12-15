@@ -6,16 +6,22 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:38:07 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/14 18:17:17 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/15 19:00:45 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character(const std::string &name)
-	: name_(name){}
+	: name_(name){
+		for (int i = 0; i < 4; i++)
+			inventary_[i] = NULL;
+}
 
-Character::~Character(){}
+Character::~Character(){
+	for (int i = 0; i < 4; i++)
+			delete inventary_[i];
+}
 
 Character::Character(const Character &other)
 {
@@ -57,6 +63,7 @@ void Character::use(int idx, ICharacter& target)
 {
 	if (idx > 3)
 		return ;
-	inventary_[idx]->use(target);
+	if (inventary_[idx] != NULL)
+		inventary_[idx]->use(target);
 }
 

@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 14:22:29 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/12 19:05:34 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/15 19:01:38 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main()
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
+
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
@@ -30,8 +31,11 @@ int	main()
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
+	me->unequip(1);
+	me->use(1, *bob);
 	delete bob;
 	delete me;
 	delete src;
+	system("leaks -q ex03");
 	return 0;
 }

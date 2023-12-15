@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 16:12:17 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/14 18:41:32 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/14 20:36:53 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Ice::Ice(std::string const &type)
 : AMateria(type) {}
 
 Ice::Ice()
-: AMateria("Ice") {}
+: AMateria("ice") {}
 
 Ice::~Ice(){}
 
