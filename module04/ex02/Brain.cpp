@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 16:09:44 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/05 12:54:09 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/17 19:59:16 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Brain	&Brain::operator=(const Brain &other)
 
 void	Brain::set_called(std::string idea, int id)
 {
-	if (id < 0 && id > 99) {
+	if (id < 0 || id > 99) {
 		std::cout << "Error:\n id incorrecto!!" << std::endl;
 		return ;
 	}
@@ -47,7 +47,7 @@ void	Brain::set_called(std::string idea, int id)
 
 std::string	Brain::get_called(int id)
 {
-	if (id < 0 && id > 99){
+	if (id < 0 || id > 99){
 		std::cout << "Error:\n id incorrecto!!" << std::endl;
 		return (NULL);
 	}

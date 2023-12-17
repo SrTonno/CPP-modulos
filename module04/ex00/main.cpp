@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 19:36:22 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/09 16:52:20 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/17 19:33:09 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,16 @@ int main()
 	delete i;
 	delete j;
 	delete meta;
+	//Extra
+	std::cout << "\n\n EXTRA" << std::endl;
+	Cat cat = Cat("aaaaa");
+	Dog dog = Dog("bbbbbb");
+	Cat clone = Cat(cat);
+	std::cout << "Name DOG -> " << dog.getType() << std::endl;
+	std::cout << "Name Cat -> " << cat.getType() << std::endl;
+	std::cout << "Name cat clone -> " << clone.getType() << std::endl;
+	dog.makeSound();
+	cat.makeSound();
+	clone.makeSound();
 	return 0;
 }

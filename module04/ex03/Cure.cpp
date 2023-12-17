@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:51:50 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/14 20:47:58 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/17 19:38:01 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ AMateria* Cure::clone() const
 }
 void	Cure::use(ICharacter& target)
 {
-	std::cout << "• Cure: \"* heals "<< type_ << "’s wounds *\"" << target.getName() << " *\"" << std::endl;
+	std::cout << "* heals "<< type_ << "'s wounds *" << target.getName() << " *\"" << std::endl;
 }
