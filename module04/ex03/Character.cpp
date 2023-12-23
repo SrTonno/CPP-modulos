@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:38:07 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/15 19:00:45 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/23 18:22:50 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,16 @@ Character::Character(const std::string &name)
 	: name_(name){
 		for (int i = 0; i < 4; i++)
 			inventary_[i] = NULL;
+		for (int i = 0; i < 50; i++)
+			backpack_[i] = NULL;
+	unEquip_ = 0;
 }
 
 Character::~Character(){
 	for (int i = 0; i < 4; i++)
-			delete inventary_[i];
+		delete inventary_[i];
+	for (int i = 0; i < 50; i++)
+		delete backpack_[i];
 }
 
 Character::Character(const Character &other)
@@ -33,8 +38,11 @@ Character	&Character::operator=(const Character &other)
 	if (this != &other)
 	{
 		this->name_ = other.name_;
+		this->unEquip_ = other.unEquip_;
 		for (int i = 0; i < 4; i++)
 			this->inventary_[i] = other.inventary_[i];
+		for (int i = 0; i < 50; i++)
+			this->backpack_[i] = other.backpack_[i];
 	}
 	return (*this);
 }
@@ -52,11 +60,19 @@ void Character::equip(AMateria* m) {
 			return ;
 		}
 	}
+	delete m;
 	std::cout << "No tienes espacios disponibles :(" << std::endl;
 }
 
 void Character::unequip(int idx){
-	inventary_[idx] = NULL;
+	if (unEquip_ < 50)
+	{
+		backpack_[unEquip_++] = inventary_[idx];
+		inventary_[idx] = NULL;
+	}
+	else {
+		std::cout << "No puedes desequipar mas Materias (:" << std::endl;
+	}
 }
 
 void Character::use(int idx, ICharacter& target)
@@ -66,4 +82,3 @@ void Character::use(int idx, ICharacter& target)
 	if (inventary_[idx] != NULL)
 		inventary_[idx]->use(target);
 }
-

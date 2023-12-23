@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 19:36:20 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/04 19:38:50 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/19 13:29:31 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,3 @@ class Dog: public Animal
 		void			set_called(const std::string &idea, int id);
 		std::string		get_called(int id);
 };
-
-
-

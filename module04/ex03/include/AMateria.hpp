@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 14:23:39 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/14 20:34:46 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/23 17:20:42 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class AMateria
 	public:
 		AMateria(std::string const &type);
 		virtual ~AMateria();
-		//AMateria();
-		//AMateria(const AMateria &other);
-		//AMateria	&operator=(const AMateria &other);
+		AMateria();
+		AMateria(const AMateria &other);
+		AMateria	&operator=(const AMateria &other);
 		//[...]
 		std::string const & getType() const; //Returns the materia type
 		virtual AMateria* clone() const = 0;

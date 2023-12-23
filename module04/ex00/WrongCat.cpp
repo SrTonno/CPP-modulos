@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 19:36:08 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/19 12:49:45 by tvillare         ###   ########.fr       */
+/*   Created: 2023/12/23 15:21:19 by tvillare          #+#    #+#             */
+/*   Updated: 2023/12/23 15:30:26 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cat.hpp"
-Cat::Cat()
-:Animal(){
-	std::cout << "CAT: Contrunstructor" << std::endl;
+
+
+#include "WrongCat.hpp"
+
+WrongCat::WrongCat()
+:WrongAnimal(){
+	std::cout << "WrongCat: Contrunstructor" << std::endl;
 }
 
-Cat::Cat(const std::string &_type)
-:Animal(_type){
-	std::cout << "CAT: Contrunstructor" << std::endl;
+WrongCat::WrongCat(const std::string &_type)
+:WrongAnimal(_type){
+	std::cout << "WrongCat: Contrunstructor" << std::endl;
 
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "CAT: Destrunstructor" << std::endl;
-
+	std::cout << "WrongCat: Destrunstructor" << std::endl;
 }
 
-Cat::Cat(const Cat &other)
+WrongCat::WrongCat(const WrongCat &other)
 {
 	*this = other;
 }
 
-Cat &Cat::operator=(const Cat &other)
+WrongCat &WrongCat::operator=(const WrongCat &other)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &other) {
@@ -42,7 +44,7 @@ Cat &Cat::operator=(const Cat &other)
 	return (*this);
 }
 
-void	Cat::makeSound() const
+void	WrongCat::makeSound() const
 {
-	std::cout << "I`m cat: miau miiauuu??" << std::endl;
+	std::cout << "I`m WrongCat: miau miiauuu??" << std::endl;
 }

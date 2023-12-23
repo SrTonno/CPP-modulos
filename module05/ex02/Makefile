@@ -2,7 +2,7 @@
 #                                              FILES                          #
 ###############################################################################
 SRCSDIR = ./
-SRCSCFILES = main.cpp cat.cpp dog.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
+SRCSCFILES = main.cpp Bureaucrat.cpp
 
 
 SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}}
@@ -10,7 +10,7 @@ SRCS =	${addprefix ${SRCSDIR}, ${SRCSCFILES}}
 OBJS = $(SRCS:%.cpp=objs/%.o)
 DEPS = $(OBJS:%.o=%.d)
 
-INC = -I ./
+INC = -I ./include/
 
 ###############################################################################
 #                                              SETTINGS                       #
@@ -19,8 +19,9 @@ NAME = ex00
 
 CPP = g++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-FSANITIZE = -fsanitize=address -g
 CPPFLAGS += -MMD
+
+FSANITIZE = -fsanitize=address -g
 RM = rm -rf
 
 

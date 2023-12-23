@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:39:16 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/14 18:37:46 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/23 18:02:31 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class Character: public ICharacter
 	private:
 		std::string	name_;
 		AMateria	*inventary_[4];
+		AMateria	*backpack_[50];
+		int			unEquip_;
 	public:
 		Character(const std::string &name);
 		virtual ~Character();

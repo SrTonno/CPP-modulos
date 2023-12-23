@@ -6,19 +6,24 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 19:36:15 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/04 15:50:07 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/19 12:50:31 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "dog.hpp"
 Dog::Dog()
-:Animal(){}
+:Animal(){
+	std::cout << "DOG: Contrunstructor" << std::endl;
+}
 
 Dog::Dog(const std::string &_type)
-:Animal(_type){}
+:Animal(_type){
+	std::cout << "DOG: Contrunstructor" << std::endl;
+}
 
 Dog::~Dog()
 {
+		std::cout << "DOG: Destrunstructor" << std::endl;
 }
 
 Dog::Dog(const Dog &other)

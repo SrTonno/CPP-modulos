@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 19:36:08 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/17 19:46:56 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/22 18:47:06 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,20 @@ Cat::~Cat(){
 }
 
 Cat::Cat(const Cat &other)
-:AAnimal(other) {
+{
 	std::cout << "CAT: copia" << std::endl;
+	brain = NULL;
 	*this = other;
 }
 
 Cat &Cat::operator=(const Cat &other)
 {
-	std::cout << "CAT: operador =" << std::endl;
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &other) {
 		type = other.type;
+		if (brain)
+			delete brain;
+		brain = new Brain(*other.brain);
 	}
 	return (*this);
 }

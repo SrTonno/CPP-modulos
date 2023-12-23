@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 14:23:42 by tvillare          #+#    #+#             */
-/*   Updated: 2023/12/14 18:14:42 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/23 17:21:25 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,22 @@ AMateria::AMateria(std::string const & type)
 :type_("INFINIDO"){}*/
 
 AMateria::~AMateria(){}
-/*
+
 AMateria::AMateria(const AMateria &other)
 {
-	std::cout << "AANIMAL: copia" << std::endl;
+	//std::cout << "AANIMAL: copia" << std::endl;
 	*this = other;
 }
 
 AMateria &AMateria::operator=(const AMateria &other)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	//std::cout << "Assignation operator called" << std::endl;
 	if (this != &other) {
 		type_ = other.type_;
 	}
 	return (*this);
-}*/
+}
+
 std::string const & AMateria::getType() const {
 	return (type_);
 }

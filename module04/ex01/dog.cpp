@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 19:36:15 by tvillare          #+#    #+#             */
-/*   Updated: 2023/11/04 19:40:43 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/12/19 13:23:01 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,18 @@ Dog::~Dog()
 Dog::Dog(const Dog &other)
 {
 	std::cout << "DOG: copia" << std::endl;
+	brain = NULL;
 	*this = other;
 }
 
 Dog &Dog::operator=(const Dog &other)
 {
-	std::cout << "DOG: operador =" << std::endl;
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &other) {
 		type = other.type;
+		if (brain)
+			delete brain;
+		brain = new Brain(*other.brain);
 	}
 	return (*this);
 }
